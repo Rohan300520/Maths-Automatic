@@ -1,0 +1,3 @@
+mathreader
+flask
+opencv-python
