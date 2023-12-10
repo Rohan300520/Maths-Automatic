@@ -1,0 +1,132 @@
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+body {
+    position: relative;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    color: #FFF;
+}
+a {
+    /* color: #000; */
+    color: #FFF;
+}
+
+h1,
+#about,
+#latex-title {
+    color: #CFDCFF;
+}
+
+#latex-title {
+    font-size: 14pt;
+    font-weight: bold;
+}
+/*
+    7
+    9
+*/
+#background {
+    /* background-image: url('images/5.jpg'); */
+    /* background-image: url('images/7.jpg'); */
+    background-image: url('images/9.jpg');
+    background-size: cover;
+    background-position: bottom;
+    /* filter: blur(10px); */
+    filter: blur(0px);
+    /* -webkit-filter: blur(10px); */
+    -webkit-filter: blur(0px);
+    position: fixed;
+    width: 100%;
+    min-height: 100%;
+    z-index: 0;
+}
+#background::after {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    content: '';
+    /* background: rgba(255,255,255,0.5) */
+    /* background: rgba(122, 0, 255, 0.75) */
+    background: rgb(56, 0, 117, 0.75);
+}
+
+#mainContent {
+    position: relative;
+    width: 75%;
+    /* max-width: 900px; */
+    max-width: 1100px;
+    margin: auto;
+    left: 0; right: 0;
+    text-align: center;
+}
+
+#mainContent header {
+    padding: 5px 0;
+}
+
+#mainContent #info {
+    text-align: left;
+}
+ul{
+    padding: 0;
+    margin-bottom: 8px;
+}
+
+
+#loading {
+    display: none;
+    background-image: url('images/spinner.gif');
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    position:absolute;
+    z-index:99999;
+    right:10px;
+    top:0;
+    bottom: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+}
+
+#loading.--show {
+    display: block;
+}
+
+
+
+
+@media only screen and (min-width:0px) and (max-width: 800px)  {
+
+    #mainContent {
+        position: relative;
+        width: 90%;
+        max-width: 100%;
+    }
+
+    .quadro__canvas {
+        height: 80vh;
+        max-height: 500px;
+    }
+
+
+}
+#info_latex{
+    margin-bottom: 20px;
+    padding: 10px 5px;
+    text-align: left;
+    /* background-color: rgba(255,255,255,0.65); */
+    background-color: rgb(55, 20, 93);
+}
+
+#info_latex ul{
+    margin-top: 5px;
+}
+
+#visualLatex {
+    font-size: 30px;
+}

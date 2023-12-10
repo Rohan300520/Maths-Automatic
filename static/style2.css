@@ -1,0 +1,104 @@
+#background {
+	/* background-image: url('images/5.jpg'); */
+	/* background-image: url('images/7.jpg'); */
+	background-image: url('images/9.jpg');
+	background-size: cover;
+	background-position: bottom;
+	/* filter: blur(10px); */
+	filter: blur(0px);
+	/* -webkit-filter: blur(10px); */
+	-webkit-filter: blur(0px);
+	position: fixed;
+	width: 100%;
+	min-height: 100%;
+	z-index: 0;
+}
+.btn-group button {
+	background-color: #04AA6D; /* Green background */
+	border: 1px solid green; /* Green border */
+	color: white; /* White text */
+	padding: 10px 24px; /* Some padding */
+	cursor: pointer; /* Pointer/hand icon */
+	float: left; /* Float the buttons side by side */
+	align-items: center;
+}
+
+.btn-group button:not(:last-child) {
+	border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+	background-color: #3e8e41;
+}
+
+.center {
+	margin: 0;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	-ms-transform: translate(-50% , -50%);
+	transform: translate(-50%, -50%);
+}
+.container {
+	display: block;
+	width: 100%;
+				
+}
+.drawing {
+	display: none;
+
+	margin: auto;
+}
+.drawing.--show {
+	display: block;
+}
+.calci {
+	display: none;
+	width: 50%;
+	height: 400px;
+	margin: auto;
+}
+.calci.--show {
+	display: block;
+}
+.fileinput {
+	display: none;
+	width: 50%;
+	height: 400px;
+	margin: auto;
+}
+.fileinput.--show {
+	display: block;
+}
+#zbeubeu {
+	width: 600px;
+	height: 600px;
+}
+textarea { 
+	font-size: 25px; 
+}
+.button {
+	cursor: pointer;float: 
+	right;background: 
+	transparent;
+	border: 0px;
+}
+			
+.arrow {
+	enable-background:new 0 0 963 963;
+	fill:#1fc600;
+}
+.arrow:hover,
+.arrow:focus {
+	fill: #006400;
+}
+			
+		
