@@ -4,7 +4,7 @@ Maths-Automatic is a web application built with Flask that allows users to input
 Additionally, Maths-Automatic provides step-by-step solutions to user queries using the Wolfram Alpha API. Users are required to provide their Wolfram Alpha API key in the `main.py` file:
 
 ```python
-app.config['WOLFRAMALPHA_APP_ID'] = "your_wolfram_alpha_api_key"
+    app.config['WOLFRAMALPHA_APP_ID'] = "your_wolfram_alpha_api_key"
 ```
 
 ## Installation
@@ -26,11 +26,10 @@ Follow these steps to set up the project on your local machine:
     ```
 
 4. Update the Wolfram Alpha API key in main.py:
-  ``` python
-  app.config['WOLFRAMALPHA_APP_ID'] = "your_wolfram_alpha_api_key"
-  ```
+    ```python
+    app.config['WOLFRAMALPHA_APP_ID'] = "your_wolfram_alpha_api_key"
+    ```
    
-
 5. Run the application:
     ```bash
     python main.py
