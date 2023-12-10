@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+		<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"-->
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+		<script>
+			MathJax.Hub.Config({
+				tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+			});
+		</script>
+		<!-- Latest compiled JavaScript -->	
+		<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script-->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+		<script src="{{ url_for('static', filename='bower_components/mathlive/dist/mathlive.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='bower_components/drawingboard.js/dist/drawingboard.js') }}"></script>
+        <script src="{{ url_for('static', filename='bower_components/simple-undo/lib/simple-undo.js') }}"></script>
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='bower_components/drawingboard.js/dist/drawingboard.min.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rancho" />
+	</head>
+	<body>
+		<header>
+			<!-- Navbar -->
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<b><a class="navbar-brand" href="#" style="color:#8b008b;">Math's Automatic</a></b>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarText">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="#example">Examples</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#about">About</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<section>
+			<div class = "continer align-items-center">
+				<div class = "container text-center">
+					<h1 style = " font-family: Rancho; ">Differential Equations</h1>
+				</div>
+			</div>
+			<div class = "container align-items-center text-center">
+				<div class ="row">
+					<div class="col text-primary" style="margin:1em;box-shadow: 0 3px 10px #ADD8E6;border-radius: 50px 15px;">
+						<h4 style = " font-family: Rancho; padding-top:1em;">Separable Equations</h4>
+						<div class="container text-body">
+							<h5 style="cursor:pointer" id = "p1">\begin{equation*} \text{ solve } y' = y^2 x \end{equation*}</h5>
+							<h5 style="cursor:pointer" id = "p2">\begin{equation*} \left\lbrace y^{\prime}\left(x\right)=x+2e^{-y\left(x\right)},y\left(0\right)=0\right\rbrace \end{equation*}</h5>
+							<h5 style="cursor:pointer" id = "p3">\begin{equation*} \sec\left(y\left(t\right)\right)y^{\prime}\left(t\right)+\sin(t-y\left(t\right))=\sin\left(t+y\left(t\right)\right) \end{equation*}</h5>
+						</div>
+					</div>
+					<div class="col text-warning" style="margin:1em;box-shadow: 0 3px 10px #FFD580;border-radius: 50px 15px;">
+						<h4 style = " font-family: Rancho; padding-top:1em;">First-Order Linear Equations</h4>
+						<div class="container text-body">
+							<h5 style="cursor:pointer" id = "p4">\begin{equation*} y^{\prime}\left(t\right)-2y\left(t\right)=3e^{2t} \end{equation*}</h5>
+							<h5 style="cursor:pointer" id = "p5">\begin{equation*} xy^{^{\prime}}\left(x\right)-4y\left(x\right)=x^6\exp\left(x\right),y\left(1\right)=0 \end{equation*}</h5>
+							<h5 style="cursor:pointer" id = "p6">\begin{equation*} \text{ solve }y^{\prime}\left(t\right)-3y\left(t\right)=delta\left(t-2\right)\text{ , where y }\left(0\right)=0 \end{equation*}</h5>
+						</div>
+					</div>
+					<div class="col text-success" style="margin:1em;box-shadow: 0 3px 10px #90EE90;border-radius: 50px 15px;">
+						<h4 style = " font-family: Rancho; padding-top:1em;">First-Order Exact Equations</h4>
+						<div class="container text-body">
+							<h5 style="cursor:pointer" id = "p7">\begin{equation*} \left(3x+2y(x)\right)y^{\prime}(x)+2x+3y(x)=0,y\left(0\right)=2 \end{equation*}</h5>
+							<h5 style="cursor:pointer" id = "p8">\begin{equation*} 2t\exp\left(2y\right)y^{\prime}=3t^4+\exp\left(2y\right) \end{equation*}</h5>
+						</div>
+					</div>
+				</div>
+				<div class ="row">
+					<div class="col text-primary" style="margin:1em;box-shadow: 0 3px 10px #ADD8E6;border-radius: 50px 15px;">
+						<h4 style = " font-family: Rancho; padding-top:1em;">Bernoulli Equations</h4>
+						<div class="container text-body">
+							<h5 style="cursor:pointer" id = "p9">\begin{equation*} y^{\prime}\left(x\right)-y=e^xy(x)^2 \end{equation*}</h5>
+							<h5 style="cursor:pointer" id = "p10">\begin{equation*} x^{\prime}\left(t\right)=x\left(t\right)\left(tx\left(t\right)^3-1\right) \end{equation*}</h5>
+						</div>
+					</div>
+					<div class="col text-warning" style="margin:1em;box-shadow: 0 3px 10px #FFD580;border-radius: 50px 15px;">
+						<h4 style = " font-family: Rancho; padding-top:1em;">First-Order Substitutions</h4>
+						<div class="container text-body">
+							<h5 style="cursor:pointer" id = "p11">\begin{equation*} v^{\prime}=t\sin\left(2v(t)+t\right)-\frac{1}{2},v\left(0\right)=\frac{\pi}{2} \end{equation*}</h5>
+							<h5 style="cursor:pointer" id = "p12">\begin{equation*} \text{ solve }xy^{\prime}(x)=y(x)\left(\log\left(x\right)-log\left(y(x)\right)\right) \end{equation*}</h5>
+							<h5 style="cursor:pointer" id = "p13">\begin{equation*} \text{ solve }2t^3y^{\prime}\left(t\right)=1+\sqrt{\left(1+4t^2y\left(t\right)\right)} \end{equation*}</h5>
+						</div>
+					</div>
+					<div class="col text-success" style="margin:1em;box-shadow: 0 3px 10px #90EE90;border-radius: 50px 15px;">
+						<h4 style = " font-family: Rancho; padding-top:1em;">Reduction of Order</h4>
+						<div class="container text-body">
+							<h5 style="cursor:pointer" id = "p14">\begin{equation*} tx^{\prime\prime}\left(t\right)-2x^{\prime}\left(t\right)=10t^4 \end{equation*}</h5>
+							<h5 style="cursor:pointer" id = "p15">\begin{equation*} y^{\prime\prime}\left(x\right)+y^{\prime}\left(x\right)^2=0 \end{equation*}</h5>
+							<h5 style="cursor:pointer" id = "p16">\begin{equation*} \text{ solve }v^{\prime\prime}\left(x\right)^2=1+v^{\prime}\left(x\right)^2,v\left(0\right)=1,v^{\prime}\left(0\right)=0 \end{equation*}</h5>
+						</div>
+					</div>
+				</div>
+				<div class ="row">
+					<div class="col text-warning" style="margin:1em;box-shadow: 0 3px 10px #FFD580;border-radius: 50px 15px;">
+						<h4 style = " font-family: Rancho; padding-top:1em;">Higher-Order Equations</h4>
+						<div class="container text-body">
+							<h5 style="cursor:pointer" id = "p17">\begin{equation*} solvey^{(4)}\left(x\right)+16y\left(x\right)=0 \end{equation*}</h5>
+							<h5 style="cursor:pointer" id = "p18">\begin{equation*} y^{(3)}(t)-2y^{\prime\prime}(t)+y^{\prime}(t)=2-24e^t+40e^{5t},y\left(0\right)=1,y^{\prime}\left(0\right)=0,y^{\prime\prime}\left(0\right)=-1 \end{equation*}</h5>
+							<h5 style="cursor:pointer" id = "p19">\begin{equation*} y^{(3)}(x)-y^{\prime\prime}(x)+y^{^{\prime}}(x)-y(x)=\cosh\left(x\right) \end{equation*}</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="bg-light text-center text-lg-start" >
+			<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+				© 2021 Non-Copyright:
+				<a class="text-dark" href=""><img src ="{{ url_for('static', filename='images/r.png') }}" style = "height:25px;width:25px;"/> </a>
+			</div>
+		</footer>
+		<script>
+			document.getElementById("p1").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","solve y' = y^2 x");
+			};
+			document.getElementById("p2").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","y'(x) = (x + 2) e^(-y(x)), y(0) = 0)");
+			};
+			document.getElementById("p3").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","sec(y(t)) y'(t) + sin(t - y(t)) = sin(t + y(t))");
+			};
+			document.getElementById("p4").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","y'(t) - 2y(t) = 3 e^(2t)");
+			};
+			document.getElementById("p5").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","x y'(x) - 4 y(x) = x^6 exp(x), y(1) = 0");
+			};
+			document.getElementById("p6").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","solve y'(t) - 3y(t) = delta(t - 2), where y(0) = 0");
+			};
+			document.getElementById("p7").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","(3x + 2y)y' + 2x + 3y = 0 where y(0) = 2");
+			};
+			document.getElementById("p8").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","2 t exp(2y)y' = 3 t^4 + exp(2y)");
+			};
+			document.getElementById("p9").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","y'(x) - y = e^x y^2");
+			};
+			document.getElementById("p10").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","x'(t) = x(t)(t x(t)^3 - 1)");
+			};
+			document.getElementById("p11").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","v' = t sin(2v + t) - 1/2, v(0) = pi/2");
+			};
+			document.getElementById("p12").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","solve x y' = y*(log(x) - log(y))");
+			};
+			document.getElementById("p13").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","solve 2 t^3 y'(t) = 1 + sqrt(1 + 4 t^2 y(t))");
+			};
+			document.getElementById("p14").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","t x''(t) - 2 x'(t) = 10 t^4");
+			};
+			document.getElementById("p15").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","y''(x) + y'(x)^2 = 0");
+			};
+			document.getElementById("p16").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","solve v''(x)^2 = (1+v'(x)^2), v(0) = 1, v'(0) = 0");
+			};
+			document.getElementById("p17").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","solve y''''(x) + 16y(x) = 0");
+			};
+			document.getElementById("p18").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","y''' - 2y'' + y' = 2 - 24e^t + 40e^(5t), y(0) = 1, y'(0) = 0, y''(0) = -1");
+			};
+			document.getElementById("p19").onclick = function () {
+				location.href = "solution";
+				sessionStorage.setItem("latex","y''' - y'' + y' - y = cosh(x)");
+			};
+		</script>
+	</body>
+</html>

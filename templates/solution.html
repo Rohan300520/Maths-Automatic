@@ -1,0 +1,273 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+		<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"-->
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			MathJax.Hub.Config({
+				tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+			});
+		</script>
+		<!-- Latest compiled JavaScript -->	
+		<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script-->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+		<script src="{{ url_for('static', filename='bower_components/mathlive/dist/mathlive.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='bower_components/drawingboard.js/dist/drawingboard.js') }}"></script>
+        <script src="{{ url_for('static', filename='bower_components/simple-undo/lib/simple-undo.js') }}"></script>
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='bower_components/drawingboard.js/dist/drawingboard.min.css') }}"/>
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rancho" />
+		<style>
+			#pods {
+				display: block;
+				padding-bottom: 10px;
+				border:2px solid #702963;
+				box-shadow: 0 3px 10px #CBC3E3;
+				background:white;
+				border-radius: 10px;
+				padding-left:1em;
+				padding-right:1em;
+				box-sizing: content-box; 
+			}
+			pod.--show {
+				display: block;
+			}
+			.fingerprint-spinner, .fingerprint-spinner * {
+      				box-sizing: border-box;
+    			}
+
+    			.fingerprint-spinner {
+      				height: 100%;
+      				width: 100%;
+      				padding: 2px;
+      				overflow: hidden;
+      				position: relative;
+    			}
+
+    			.fingerprint-spinner .spinner-ring {
+      				position: absolute;
+      				border-radius: 50%;
+      				border: 3px solid transparent;
+      				border-top-color: #008000;
+      				animation: fingerprint-spinner-animation 1500ms cubic-bezier(0.680, -0.750, 0.265, 1.750) infinite forwards;
+      				margin: auto;
+      				bottom: 0;
+      				left: 0;
+      				right: 0;
+      				top: 0;
+    			}
+
+    			.fingerprint-spinner .spinner-ring:nth-child(1) {
+     				height: calc(75px / 9 + 0 * 75px / 9);
+      				width: calc(75px / 9 + 0 * 75px / 9);
+      				animation-delay: calc(50ms * 1);
+					border-top-color: violet;
+    			}
+
+    			.fingerprint-spinner .spinner-ring:nth-child(2) {
+      				height: calc(75px / 9 + 1 * 75px / 9);
+      				width: calc(75px / 9 + 1 * 75px / 9);
+      				animation-delay: calc(50ms * 2);
+					border-top-color: indigo;
+    			}
+
+    			.fingerprint-spinner .spinner-ring:nth-child(3) {
+      				height: calc(75px / 9 + 2 * 75px / 9);
+      				width: calc(75px / 9 + 2 * 75px / 9);
+      				animation-delay: calc(50ms * 3);
+					border-top-color: blue;
+    			}
+
+    			.fingerprint-spinner .spinner-ring:nth-child(4) {
+      				height: calc(75px / 9 + 3 * 75px / 9);
+      				width: calc(75px / 9 + 3 * 75px / 9);
+      				animation-delay: calc(50ms * 4);
+					border-top-color: green;
+    			}
+
+    			.fingerprint-spinner .spinner-ring:nth-child(5) {
+      				height: calc(75px / 9 + 4 * 75px / 9);
+      				width: calc(75px / 9 + 4 * 75px / 9);
+      				animation-delay: calc(50ms * 5);
+					border-top-color: #90EE90;
+    			}
+
+    			.fingerprint-spinner .spinner-ring:nth-child(6) {
+      				height: calc(75px / 9 + 5 * 75px / 9);
+      				width: calc(75px / 9 + 5 * 75px / 9);
+      				animation-delay: calc(50ms * 6);
+					border-top-color: yellow;
+				}
+
+    			.fingerprint-spinner .spinner-ring:nth-child(7) {
+      				height: calc(75px / 9 + 6 * 75px / 9);
+      				width: calc(75px / 9 + 6 * 75px / 9);
+     		 		animation-delay: calc(50ms * 7);
+					border-top-color: #FFD580;
+    			}
+
+    			.fingerprint-spinner .spinner-ring:nth-child(8) {
+      				height: calc(75px / 9 + 7 * 75px / 9);
+      				width: calc(75px / 9 + 7 * 75px / 9);
+      				animation-delay: calc(50ms * 8);
+					border-top-color: orange;
+    			}
+
+    			.fingerprint-spinner .spinner-ring:nth-child(9) {
+      				height: calc(75px / 9 + 8 * 75px / 9);
+      				width: calc(75px / 9 + 8 * 75px / 9);
+      				animation-delay: calc(50ms * 9);
+					border-top-color: red;
+    			}
+				.fingerprint-spinner.--show{
+					display: none;
+				}
+
+    			@keyframes fingerprint-spinner-animation {
+      			100% {
+        			transform: rotate( 360deg );
+      			}
+    			}
+				summary {
+					padding: 1em;
+					cursor: pointer;
+					border: solid thin;
+					margin-bottom: 1em;
+				}
+				body{
+					background:#E1DDF9;
+				}
+				
+		</style>
+		<script>	
+			'use strict'
+			var query = sessionStorage.getItem("latex");
+			//query = query.replace(/\\/g, '\\')
+			alert("latex : "+query)
+
+			// Create an AJAX request
+  			var xhr = new XMLHttpRequest();
+  			xhr.open('POST', '/query', true);
+  			xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+  			// Set up the response handler
+  			xhr.onreadystatechange = function () {
+    		if (xhr.readyState === 4 && xhr.status === 200) {
+      		// Parse the XML response
+			    var response = JSON.parse(xhr.responseText);
+				//alert(response.xml);
+					if (response.error) {
+                        $("#pods").text("Error: " + response.error);
+                    } else {
+                        var xml = response.xml;
+                        var xmlDoc = $.parseXML(xml);
+                        var $xml = $(xmlDoc);
+
+                        var resultHtml = "";
+
+                        // Iterate over each pod in the XML response
+                        $xml.find("pod").each(function() {
+                            var title = $(this).attr("title");
+                            var podType = $(this).attr("type");
+                            var podContent = $(this).text();
+
+                            if (podType === "image") {
+                                var imgSrc = $(this).find("img").attr("src");
+                                resultHtml += "<h2>" + title + "</h2>";
+                                resultHtml += "<img src='" + imgSrc + "'>";
+                            } else {
+                                resultHtml += "<h2>" + title + "</h2>";
+                                resultHtml += "<p>" + podContent + "</p>";
+                            }
+                        });
+
+                        // Display the result HTML in the #result div
+                        $("#pods").html(resultHtml);
+                    }
+
+    			}
+  			};
+
+  			// Send the query as a POST request
+  			xhr.send('query=' + encodeURIComponent(query));
+			
+			document.onreadystatechange = function () {
+				
+				var x = document.getElementById('loading');
+				var y = document.getElementById('pods');
+				var state = document.readyState
+				if (state == 'complete') {
+					setTimeout(function(){
+						x.classList.add('--show');
+						y.classList.add('--show');
+					},3500);
+				}
+			}
+			
+		</script>
+		
+	</head>
+	<body>
+		<header>
+			<!-- Navbar -->
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<b><a class="navbar-brand" href="/" style="color:#8b008b;">Math's Automatic</a></b>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarText">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="/">Home</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<section class = "align-items-center">
+			<div class="hero-body " style = "padding-left:0px;">
+				<div class="container-fluid bg-1 text-center background" >
+					<div class="fingerprint-spinner" id = "loading">
+						<div class="spinner-ring"></div>
+						<div class="spinner-ring"></div>
+						<div class="spinner-ring"></div>
+						<div class="spinner-ring"></div>
+						<div class="spinner-ring"></div>
+						<div class="spinner-ring"></div>
+						<div class="spinner-ring"></div>
+						<div class="spinner-ring"></div>
+						<div class="spinner-ring"></div>
+					</div>
+				</div>
+				<div class = "container text-right" style= "margin: auto;">
+					<div class = "container-fluid"><button class = "btn btn-primary" onclick = "print()" id = "p" ">Print</button></div>
+					<div class = "container text-center" id = "pods" style="padding:10px;margin: auto;"> </div>
+				</div>
+			</div>
+		</section>
+		<footer class="bg-light text-center text-lg-start" >
+			<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+				© 2021 Non-Copyright:
+				<a class="text-dark" href=""><img src ="{{ url_for('static', filename='images/r.png') }}" style = "height:25px;width:25px;"/> </a>
+			</div>
+		</footer>
+		<script>
+			var prtContent = document.getElementById("pods");
+			
+			function print(){
+				var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+				WinPrint.document.write(prtContent.innerHTML);
+				WinPrint.document.close();
+				WinPrint.focus();
+				WinPrint.print();
+				WinPrint.close();
+			}
+		</script>
+	</body>
+</html>
