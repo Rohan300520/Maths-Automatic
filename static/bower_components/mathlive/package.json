@@ -1,0 +1,218 @@
+{
+  "_from": "mathlive",
+  "_id": "mathlive@0.69.4",
+  "_inBundle": false,
+  "_integrity": "sha512-l14G1XF/PXo0+ztbMMA4eiT9P8SNZYfCOyEhOR8lwzKlr70nbT+t3riipnt5+iGOLAzWIhnOua+7bzeYkE0gRg==",
+  "_location": "/mathlive",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "mathlive",
+    "name": "mathlive",
+    "escapedName": "mathlive",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/mathlive/-/mathlive-0.69.4.tgz",
+  "_shasum": "5ab191073751a9bbf6af0510aceb18030ad8d611",
+  "_spec": "mathlive",
+  "_where": "C:\\Users\\user",
+  "author": {
+    "name": "Arno Gourdol",
+    "email": "arno@arno.org"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "maintained node versions",
+    "not dead"
+  ],
+  "bugs": {
+    "url": "https://github.com/arnog/mathlive/issues/"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Louis Larpin",
+      "url": "lilfaf.github.io"
+    },
+    {
+      "name": "Neil Soiffer",
+      "url": "https://github.com/NSoiffer"
+    },
+    {
+      "name": "Jason Boxman",
+      "url": "https://github.com/jboxman"
+    },
+    {
+      "name": "Synergy Codes",
+      "url": "https://www.synergycodes.com/"
+    },
+    {
+      "name": "Rafał Piekarski",
+      "url": "https://github.com/rpdiss"
+    },
+    {
+      "name": "Kajetan Champlewski",
+      "email": "kchamplewski@gmail.com"
+    },
+    {
+      "name": "Fabian Grewing",
+      "email": "Fabian.Heimbuerger@gmail.com"
+    },
+    {
+      "name": "Paul Masson",
+      "email": "paulmasson@comcast.net"
+    },
+    {
+      "name": "Soroush Javadi",
+      "email": "soroush.javadi@gmail.com"
+    },
+    {
+      "name": "Thomas Schell",
+      "email": "thom.schell@gmail.com"
+    },
+    {
+      "name": "leerobert",
+      "email": "lee.robert.138@gmail.com"
+    },
+    {
+      "name": "spirobel",
+      "email": "spirobel@protonmail.com"
+    },
+    {
+      "name": "Artur Fijał",
+      "email": "afijal@soldevelo.com"
+    },
+    {
+      "name": "David Le Jolly",
+      "email": "david.lejolly@gmail.com"
+    },
+    {
+      "name": "Johannes Wilm",
+      "email": "johanneswilm@gmail.com"
+    },
+    {
+      "name": "Nick Gravelyn",
+      "email": "nick@gravelyn.com"
+    },
+    {
+      "name": "paosder",
+      "email": "denjaraos@gmail.com"
+    },
+    {
+      "name": "Ben Eater",
+      "url": "https://github.com/beneater"
+    },
+    {
+      "name": "Dominik Janković",
+      "url": "https://github.com/djankovic"
+    }
+  ],
+  "dependencies": {
+    "@cortex-js/compute-engine": "^0.4.2"
+  },
+  "deprecated": false,
+  "description": "Render and edit beautifully typeset math",
+  "devDependencies": {
+    "@arnog/esbuild-plugin-less": "^1.0.2",
+    "@cortex-js/prettier-config": "^1.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@types/css-font-loading-module": "0.0.4",
+    "@types/jest": "^26.0.23",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "autoprefixer": "10.2.6",
+    "check-node-version": "^4.1.0",
+    "cssnano": "^5.0.6",
+    "esbuild": "^0.12.9",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-no-unsanitized": "^3.1.5",
+    "eslint-plugin-prettier": "^3.4.0",
+    "estrella": "^1.4.1",
+    "husky": "^6.0.0",
+    "jest": "^27.0.5",
+    "jest-silent-reporter": "^0.5.0",
+    "less": "^4.1.1",
+    "open": "^8.2.1",
+    "postcss": "^8.3.5",
+    "postcss-cli": "^8.3.1",
+    "prettier": "2.3.1",
+    "rollup": "^2.52.2",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "serve-http": "^1.0.6",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.4"
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=6.14.8"
+  },
+  "files": [
+    "/dist"
+  ],
+  "funding": {
+    "type": "individual",
+    "url": "paypal.me/arnogourdol"
+  },
+  "homepage": "https://github.com/arnog/mathlive#readme",
+  "keywords": [
+    "math",
+    "editor",
+    "javascript",
+    "math-editing",
+    "latex",
+    "tex",
+    "mathjax",
+    "katex",
+    "mathquill"
+  ],
+  "license": "MIT",
+  "main": "./dist/mathlive.min.js",
+  "module": "./dist/mathlive.min.mjs",
+  "name": "mathlive",
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "endOfLine": "lf",
+    "jsxSingleQuote": false,
+    "jsxBracketSameLine": false,
+    "proseWrap": "always",
+    "quoteProps": "consistent",
+    "semi": true,
+    "singleQuote": true,
+    "indentSize": 2,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnog/mathlive.git"
+  },
+  "scripts": {
+    "build": "bash ./scripts/build.sh",
+    "clean": "bash ./scripts/clean.sh",
+    "dist": "bash ./scripts/build.sh production; bash ./scripts/test.sh",
+    "lint": "eslint --fix src/",
+    "postversion": "bash ./scripts/github-release.sh",
+    "prepare": "bash ./scripts/build.sh production && husky install",
+    "start": "bash ./scripts/start.sh",
+    "test": "bash ./scripts/test.sh",
+    "version": "bash ./scripts/version.sh"
+  },
+  "types": "./dist/public/mathlive.d.ts",
+  "version": "0.69.4"
+}
